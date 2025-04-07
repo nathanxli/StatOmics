@@ -1,3 +1,7 @@
+# Filter_fun_by_Pct.R
+
+library(dplyr)
+
 # A more generalized filter function by percentage
 filter_missing_byPct <- function(data, threshold = 0.7, filter_mode = "either", group_info = NULL) {
   
