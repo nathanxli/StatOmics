@@ -14,3 +14,6 @@ print(result)  # Output: "hi"
 result = call("echo", "Test String")
 print(result)  # Output: "Test String"
 
+# Example: Testing usage of package
+result = call("get_top_table")
+print(result)

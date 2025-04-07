@@ -3,7 +3,7 @@
 from ..r_interface import source_r_script, get_r_function
 
 # Load R script(s) for this module
-source_r_script(["Test/test1.R", "Test/test2.R"])
+source_r_script(["Test/test1.R", "Test/test2.R", "Test/package_test.R"])
 
 def call(func_name, *args):
     """
