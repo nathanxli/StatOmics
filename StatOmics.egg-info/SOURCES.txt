@@ -21,6 +21,8 @@ StatOmics/Preprocessing/Imputation_byNormal.R
 StatOmics/Preprocessing/Normalization_bySingleRef.R
 StatOmics/Preprocessing/__init__.py
 StatOmics/Preprocessing/log2Transf.R
+StatOmics/Preprocessing/pre-setting.R
 StatOmics/Test/__init__.py
+StatOmics/Test/package_test.R
 StatOmics/Test/test1.R
 StatOmics/Test/test2.R
