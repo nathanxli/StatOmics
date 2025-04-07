@@ -5,12 +5,12 @@ from pathlib import Path
 import rpy2.robjects as rob
 from rpy2.robjects.packages import importr
 
-required_r_packages = ['limma']
+required_r_packages = ['limma', 'ggplot2']
 loaded_r_packages = {}
 
 for pkg in required_r_packages:
     try:
-        loaded_r_packages[pkd] = importr(pkg)
+        loaded_r_packages[pkg] = importr(pkg)
     except Exception as e:
         print(f"Failed to load R package '{pkg}': {e}")
 
