@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='StatOmics',
-    version=0.3,
+    version=0.4,
     author="Nathan Li",
     url="https://github.com/nathanxli/StatOmics",
     packages=find_packages(),
