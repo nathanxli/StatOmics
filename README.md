@@ -16,10 +16,14 @@ This package requires:
 
 Make sure the following R packages are installed before using the package:
 
+- impute
 - dplyr
 - matrixStats
 - stats
-
+- tidyr
+- samr
+- writexl
+- car
 
 ## Module Structure
 - StatOmics/r_interface.py: Bridge for sourcing and calling R functions
