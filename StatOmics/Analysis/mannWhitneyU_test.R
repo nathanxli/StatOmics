@@ -1,3 +1,8 @@
+# mannWhitneyU_test.R
+
+library(dplyr)
+library(tidyr)
+
 # Mann-Whitney U-test (Two groups, two-sided)
 # the smallest sample size of each of the two samples is n1=n2=3 for a one-sided test
 # the smallest sample size of each of the two samples is n1=n2=4 for a two-sided test

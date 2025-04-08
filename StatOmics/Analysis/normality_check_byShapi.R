@@ -1,3 +1,8 @@
+# normality_check_byShapi.R
+
+library(dplyr)
+library(ggplot2)
+
 # Shapiro Test of Normality for each feature
 normality_check_byShapi <- function(data) {
   
