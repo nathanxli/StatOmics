@@ -1,6 +1,4 @@
-# Mann-Whitney U-test (Two groups, two-sided)
-# the smallest sample size of each of the two samples is n1=n2=3 for a one-sided test
-# the smallest sample size of each of the two samples is n1=n2=4 for a two-sided test
+# Friedman's test for non-normal and paired data
 library(dplyr)
 library(matrixStats)
 library(tidyverse)
@@ -13,28 +11,24 @@ library(caret)
 library(tidyr)
 library(car)
 
-
-run_mannWhitU_test <- function(data, group_info) {
-  # get character columns (e.g., Protein and Genes)
-  character_cols <- data %>% select(where(is.character))
+run_friedman_test <- function(data, group_info = NULL) {
   
-  # get numeric data
+  character_cols <- data %>% select(where(is.character))
   numeric_data <- data %>% select(where(is.numeric))
   
-  # group_info is a logical vector with the same length as the number of numeric columns
-  group_info <- unname(unlist(group_info))
-  group_values <- unique(group_info)
-  
-  if (length(group_values) != 2) {
-    stop("Only allow two groups!")
+  if (!is.null(group_info)) {
+    
+    if (length(group_info) != ncol(numeric_data)) {
+      stop("Length of group_info must match the number of numeric columns")
+    }
+    
+    group_info <- unname(unlist(group_info))
+    
+  } else {
+    
+    group_info <- sub("_.*", "", colnames(numeric_data))
+    
   }
-  
-  # reshape to long format
-  long_sample <- data %>%
-    pivot_longer(cols = colnames(numeric_data), 
-                 names_to = "Sample", 
-                 values_to = "Value") %>%
-    mutate(Group = rep(group_info, nrow(data)))
   
   # Initialize results dataframe
   results <- data.frame(
@@ -44,7 +38,7 @@ run_mannWhitU_test <- function(data, group_info) {
     stringsAsFactors = FALSE
   )
   
-  # do Mann-Whitney U test for each feature
+  # do Friedman test for each feature
   for (i in 1:nrow(data)) {
     protein <- data[i, 1]  # First column is the protein identifier
     
@@ -60,9 +54,9 @@ run_mannWhitU_test <- function(data, group_info) {
       next
     }
     
-    # Perform Mann-Whitney U-test
+    # Perform Friedman test
     test <- tryCatch({
-      wilcox.test(Value ~ Group, data = each_test, alternative = "two.sided", exact = FALSE)
+      friedman.test(Value ~ Group, data = each_test)
     }, error = function(e) {
       warning(paste("Error in Mann-Whitney U-test:", e$message))
       return(NULL)
@@ -85,12 +79,4 @@ run_mannWhitU_test <- function(data, group_info) {
   
   final_results <- left_join(character_cols, results, by = "Protein")
   
-  return(final_results)
-  
 }
-
-
-# Test the function
-# result <- run_mannWhitU_test(norm_imputed_plasma, case_control_info)
-# sum(result$p_value < 0.05, na.rm = T)
-

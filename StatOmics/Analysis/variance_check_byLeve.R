@@ -1,10 +1,17 @@
-# variance_check_byLeve.R
-
-library(dplyr)
-library(car)
-library(tidyr)
-
 ## Levene's median test for variance check for each feature (can be used for more than two groups)
+library(dplyr)
+library(matrixStats)
+library(tidyverse)
+library(Hmisc)
+library(ggplot2)
+library(tidyr)
+library(VIM)
+library(mice)
+library(caret)
+library(tidyr)
+library(car)
+
+
 run_levene_tests <- function(data, group_info) {
   # get character columns (e.g., Protein and Genes)
   character_cols <- data %>% select(where(is.character))

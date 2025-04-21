@@ -1,9 +1,17 @@
-# normality_check_byShapi.R
-
-library(dplyr)
-library(ggplot2)
-
 # Shapiro Test of Normality for each feature
+library(dplyr)
+library(matrixStats)
+library(tidyverse)
+library(Hmisc)
+library(ggplot2)
+library(tidyr)
+library(VIM)
+library(mice)
+library(caret)
+library(tidyr)
+library(car)
+
+
 normality_check_byShapi <- function(data) {
   
   # Make a copy of the data to avoid modifying the original

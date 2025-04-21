@@ -1,13 +1,25 @@
-# permutation_basedpvalues.R
-
-library(dplyr)
-library(samr)
-library(writexl)
-
 ## Use existing package for SAM
 install.packages("samr")
 library(samr)
 library(DT)
+library(dplyr)
+library(magrittr)
+library(readr)
+library(matrixStats)
+library(tidyverse)
+library(Hmisc)
+library(ggplot2)
+library(tidyr)
+library(VIM)
+library(mice)
+library(caret)
+library(tidyr)
+library(knitr)
+library(car)
+library(ggpubr)
+library(qvalue)
+library(PMCMRplus)
+
 # The data must be logged2 transformed, delta assume to be 0.5
 permuta_basedpval <- function(data, gene_col, nperm, filepath, reference_group = NULL) {
   

@@ -1,9 +1,22 @@
-# ttest&BH.R
-
-library(dplyr)
-library(stats)
-
 ## T-Test and BH method
+library(dplyr)
+library(magrittr)
+library(readr)
+library(matrixStats)
+library(tidyverse)
+library(Hmisc)
+library(ggplot2)
+library(tidyr)
+library(VIM)
+library(mice)
+library(caret)
+library(tidyr)
+library(knitr)
+library(car)
+library(ggpubr)
+library(qvalue)
+library(PMCMRplus)
+
 run_t_tests <- function(data, group_info) {
   # get character columns (e.g., Protein and Genes)
   character_cols <- data %>% select(where(is.character))
@@ -86,7 +99,7 @@ run_t_tests <- function(data, group_info) {
   
   # q-values using Benjamini-Hochberg method
   results <- results %>%
-    mutate(q_value = p.adjust(p_value, method = "BH"),
+    mutate(q_value_BH = p.adjust(p_value, method = "BH"),
            fdr_significant = q_value < 0.05)  # Add a column to indicate significance at FDR threshold
   
   # bind character columns back
