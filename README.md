@@ -24,6 +24,7 @@ Make sure the following R packages are installed before using the package:
 - samr
 - writexl
 - car
+Note that 'samr' and 'impute' are not on CRAN, and are instead installed through Bioconductor. 
 
 ## Module Structure
 - StatOmics/r_interface.py: Bridge for sourcing and calling R functions
