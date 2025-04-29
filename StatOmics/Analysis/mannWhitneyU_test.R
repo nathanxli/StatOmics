@@ -3,15 +3,15 @@
 # the smallest sample size of each of the two samples is n1=n2=4 for a two-sided test
 library(dplyr)
 library(matrixStats)
-library(tidyverse)
-library(Hmisc)
-library(ggplot2)
+# library(tidyverse)
+# library(Hmisc)
+# library(ggplot2)
 library(tidyr)
-library(VIM)
-library(mice)
-library(caret)
+# library(VIM)
+# library(mice)
+# library(caret)
 library(tidyr)
-library(car)
+# library(car)
 
 
 run_mannWhitU_test <- function(data, group_info) {

@@ -1,15 +1,15 @@
 # Shapiro Test of Normality for each feature
 library(dplyr)
 library(matrixStats)
-library(tidyverse)
-library(Hmisc)
-library(ggplot2)
+# library(tidyverse)
+# library(Hmisc)
+# library(ggplot2)
 library(tidyr)
-library(VIM)
-library(mice)
-library(caret)
+# library(VIM)
+# library(mice)
+# library(caret)
 library(tidyr)
-library(car)
+# library(car)
 
 
 normality_check_byShapi <- function(data) {
