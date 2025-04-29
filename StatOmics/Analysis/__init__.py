@@ -11,7 +11,8 @@ source_r_script([
     "Analysis/variance_check_byLeve.R", 
     "Analysis/welcht_test.R",
     "Analysis/kruskal_rank_sum.R",
-    "Analysis/run_friedman.R"
+    "Analysis/run_friedman.R",
+    "Analysis/route1function.R"
 ])
 
 def call(func_name, *args):
