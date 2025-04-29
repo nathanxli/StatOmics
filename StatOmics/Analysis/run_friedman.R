@@ -1,15 +1,15 @@
 # Friedman's test for non-normal and paired data
 library(dplyr)
 library(matrixStats)
-library(tidyverse)
-library(Hmisc)
-library(ggplot2)
+# library(tidyverse)
+# library(Hmisc)
+# library(ggplot2)
 library(tidyr)
-library(VIM)
-library(mice)
-library(caret)
-library(tidyr)
-library(car)
+# library(VIM)
+# library(mice)
+# library(caret)
+# library(tidyr)
+# library(car)
 
 run_friedman_test <- function(data, group_info = NULL) {
   
