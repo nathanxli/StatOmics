@@ -1,4 +1,4 @@
-# Proprocessing/__init__.py
+# Analysis/__init__.py
 
 from ..r_interface import source_r_script, get_r_function
 

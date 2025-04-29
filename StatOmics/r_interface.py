@@ -5,7 +5,7 @@ from pathlib import Path
 import rpy2.robjects as rob
 from rpy2.robjects.packages import importr
 
-required_r_packages = ['limma', 'ggplot2', 'impute', 'dplyr', 'matrixStats', 'stats', 'tidyr', 'samr', 'writexl', 'car']
+required_r_packages = ['limma', 'ggplot2', 'impute', 'dplyr', 'matrixStats', 'stats', 'tidyr', 'samr', 'writexl', 'car', 'fdrtool']
 loaded_r_packages = {}
 
 for pkg in required_r_packages:

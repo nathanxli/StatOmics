@@ -14,6 +14,7 @@ StatOmics/Analysis/kruskal_rank_sum.R
 StatOmics/Analysis/mannWhitneyU_test.R
 StatOmics/Analysis/normality_check_byShapi.R
 StatOmics/Analysis/permutation_basedpvalues.R
+StatOmics/Analysis/route1function.R
 StatOmics/Analysis/run_friedman.R
 StatOmics/Analysis/ttest&BH.R
 StatOmics/Analysis/variance_check_byLeve.R
